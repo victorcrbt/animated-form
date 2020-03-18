@@ -1,0 +1,17 @@
+{
+  "plugins": ["stylelint-prettier"],
+  "processors": ["stylelint-processor-styled-components"],
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-config-styled-components",
+    "stylelint-config-rational-order"
+  ],
+  "rules": {
+    "prettier/prettier": true,
+    "order/properties-order": [],
+    "plugin/rational-order": [true, {
+      "border-in-box-model": false,
+      "empty-line-between-groups": true,
+    }]
+  }
+}
