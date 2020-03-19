@@ -1,15 +1,29 @@
 import React from 'react';
 
-import RootImport from '~/components/RootImport';
+import { HomeScreenNavigationProps } from './types';
 
-import { Container, Title } from './styles';
+import FooterBackground from '~/components/FooterBackground';
 
-const Home = () => {
+import { Container, BottomArea, SignInButton, SignUpButton } from './styles';
+
+type HomeProps = {
+  navigation: HomeScreenNavigationProps;
+};
+
+const Home: React.FC<HomeProps> = ({ navigation }) => {
   return (
     <Container>
-      <Title>Hello, React Native!</Title>
+      <BottomArea>
+        <FooterBackground />
 
-      <RootImport />
+        <SignInButton onPress={() => navigation.navigate('SignIn')}>
+          Entrar
+        </SignInButton>
+
+        <SignUpButton onPress={(): void => navigation.navigate('SignUp')}>
+          Registrar
+        </SignUpButton>
+      </BottomArea>
     </Container>
   );
 };
