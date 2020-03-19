@@ -2,7 +2,13 @@ module.exports = {
   env: {
     es6: true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'prettier', 'prettier/react'],
+  extends: [
+    'plugin:react/recommended',
+    'airbnb',
+    'prettier',
+    'prettier/react',
+    'plugin:@typescript-eslint/recommended',
+  ],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
@@ -25,6 +31,9 @@ module.exports = {
     'eslint-plugin-import-helpers',
   ],
   rules: {
+    '@typescript-eslint/explicit-function-return-type': 'off',
+    'no-unused-vars': 'off',
+    'react/prop-types': 'off',
     'import-helpers/order-imports': [
       'warn',
       {
@@ -32,6 +41,7 @@ module.exports = {
         groups: [
           ['/^react/', '/^@react/'],
           'module',
+          '/types/',
           '/^~/util/',
           ['/^~/components/', '/^~/screens/'],
           '/^~/',
