@@ -3,7 +3,7 @@ import styled from 'styled-components/native';
 import { ButtonTextProps } from './types';
 
 export const Container = styled.TouchableOpacity.attrs({
-  activeOpacity: 0.8 as number,
+  activeOpacity: 1 as number,
 })`
   align-items: center;
   justify-content: center;
